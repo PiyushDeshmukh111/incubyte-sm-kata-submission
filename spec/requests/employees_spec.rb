@@ -12,13 +12,20 @@ RSpec.describe "Employees API", type: :request do
     }
   end
 
+  let(:headers) do
+    {
+      "CONTENT_TYPE" => "application/json",
+      "ACCEPT" => "application/json"
+    }
+  end
+
   it "creates employee" do
-    post "/employees", params: params
+    post "/employees", params: params.to_json, headers: headers
     expect(response).to have_http_status(:created)
   end
 
   it "fetches employees" do
-    get "/employees"
+    get "/employees", headers: headers
     expect(response).to have_http_status(:ok)
   end
 end
