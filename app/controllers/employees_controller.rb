@@ -1,4 +1,6 @@
 class EmployeesController < ApplicationController
+    before_action :set_employee, only: %i[show update destroy]
+
     def index
       render json: Employee.all
     end
@@ -28,7 +30,11 @@ class EmployeesController < ApplicationController
     end
   
     private
-  
+
+    def set_employee
+      @employee = Employee.find(params[:id])
+    end
+
     def employee_params
       params.require(:employee).permit(:full_name, :job_title, :country, :salary)
     end
