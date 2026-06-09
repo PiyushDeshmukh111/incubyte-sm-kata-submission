@@ -10,6 +10,7 @@ rails s
 - Employee CRUD
 - Salary calculation
 - Metrics APIs
+- Metrics APIs
 
 ## AI Usage
 Used ChatGPT for scaffolding, test generation, and improvements.
