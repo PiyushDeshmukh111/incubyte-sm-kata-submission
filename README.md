@@ -8,6 +8,7 @@ rails s
 
 ## Features
 - Employee CRUD
+- - Employee CRUD
 - Salary calculation
 - Metrics APIs
 - Metrics APIs
